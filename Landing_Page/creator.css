@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Euclid Circular B", sans-serif;
+}
+
+/*===================================================================================================================================*/
+
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text h1{
+
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.hero-text p {
+  font-size: 2rem;
+}
+
+
+.hero-image {
+    height: 92vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 250% 250%;
+    animation: gradient 10s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*===================================================================================================================================*/
+li {
+  display: inline;
+  float: right;
+  padding-top: 10px;
+}
+a {
+  display: block;
+  padding: 8px;
+  background-color: whitesmoke;
+  color: black;
+}
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+li a:hover {
+  background-color: #dddddd;
+}
+
+.section {
+  font-family: "Bowlby One", sans-serif; !important; 
+  background-color: violet;
+  height: 130px;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  text-align: center;
+  vertical-align: center;
+  padding-top: 35px;
+  color: white;
+  font-size: 48px;
+}
+
+
+.nft{
+    background-color: #e6dbff;
+}
+
+.container{
+ /* font-family: 'Roboto', sans-serif;*/
+  font-weight: 900;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+  padding-top: 50px;
+  text-align: center;
+  font-size: small;
+  max-width: auto;
+}
+
+.container img{;
+  height: auto;
+  width: 80%;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.nft-container{
+  padding: 10px;
+  max-width: 350px;
+  margin-bottom: 50px;
+
+}
+
+.nft-container img:hover{
+  border: 5px solid #4e29aa;
+  transition: 0.2s;
+}
+
+
+
+/*====================================================================================================================================*/
+
+footer{
+    position: absolute;
+    background: #111;
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+.socials{
+   background: #111;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #111;
+    border: 1.1px solid white;
+    padding: 5px;
+
+    border-radius: 50%;
+
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+
+
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: #4e29aa;
+}
+
+.footer-bottom{
+    background: #000;
+    width: auto;
+    padding: 20px;
+padding-bottom: 40px;
+    text-align: center;
+}
+.footer-bottom p{
+float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom p a{
+  color:#44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.footer-menu{
+  float: right;
+
+}
+.footer-menu ul{
+  display: flex;
+}
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+.footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+}
+.footer-menu ul li a:hover{
+  color: #27bcda;
+}
+
+@media (max-width:500px) {
+.footer-menu ul{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+}
+
+
+/*===============================================================================================================================*/
+
+@media (max-width:768px){
+
+  .hero-text h1{
+  
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.hero-text p {
+  font-size: 1rem;
+}
+
+
+   .container{
+     display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+   }
+}
