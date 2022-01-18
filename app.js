@@ -22,8 +22,12 @@ app.get('/', function (req, res) {
     res.render("login");
 });
 
-app.get('/hello', function (req, res) {
-    res.render("hello");
+app.get('/signup', function (req, res) {
+    res.render("signup");
+})
+
+app.post('/Landingpage', function (req, res) {
+    res.render("Landingpage");
 })
 
 app.get("/mynft", (req, res) => {

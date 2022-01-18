@@ -73,7 +73,7 @@ li a:hover {
 }
 
 .section {
-  font-family: "Bowlby One", sans-serif; !important; 
+  font-family: "Bowlby One", sans-serif !important; 
   background-color: violet;
   height: 130px;
   width: 100%;
@@ -103,7 +103,7 @@ li a:hover {
   max-width: auto;
 }
 
-.container img{;
+.container img{
   height: auto;
   width: 80%;
   border-radius: 10px;
