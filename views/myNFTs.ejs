@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <% if (data.assets.length === 0){ %>
+            <div>
+                    <h1 style="align-items: center;justify-content: center;display: flex;"> No Results Found!</h1>
+            </div>          
+        <% } else{ %>
+            <div>
+                <% data.assets.forEach(function(pst) { %>
+                    <a href="<%= pst.permalink%>"><img src="<%= pst.image_url%>"></img></a>
+                          <h5><%= pst.token_id %></h5></br>
+                          <p><%= pst.name %></p></br>
+                          <p><%= pst.description %></p></br>
+                          <h5><%= pst.token_id %></h5>
+                        </div>
+                    </div>
+                <% }); %>    
+            </div>
+        <% } %>
+</body>
+</html>
