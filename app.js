@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 
 app.get('/', function (req, res) {
-    res.render("login");
+    res.render("Landingpage");
 });
 
 app.get('/signup', function (req, res) {
@@ -27,7 +27,7 @@ app.get('/signup', function (req, res) {
 })
 
 app.post('/Landingpage', function (req, res) {
-    res.render("Landingpage");
+    res.render("login");
 })
 
 app.get("/mynft", (req, res) => {
