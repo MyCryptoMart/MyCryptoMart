@@ -9,14 +9,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  
+
   <body>
     <div class="grid">
       <div class="navbar">
         <ul>  
           <img src="assets/logo.png" width="300" height="60" />
+          <% if(auth === true){ %>
+            <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+       <% } %>
           <li><a>About</a></li>
-          <li><a>News</a></li>
           <li><a>NFT Section</a></li>
           <li><a>Home</a></li>
         </ul>

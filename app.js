@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const axios = require('axios');
 const cors = require('cors');
-
+const jwt = require('jsonwebtoken');
+// const { requireAuth } = require('./authMddleware');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -17,18 +18,61 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+const maxAge = 1 * 60 * 60;
+const createToken = (usr) => {
+    return jwt.sign({ usr }, "process.env.TOKEN_SECRET" , {
+        expiresIn: maxAge
+    });
+};
+
 
 app.get('/', function (req, res) {
+    let loggedin = false;
+
+    if(req.cookies.jwt){
+        loggedin = true;
+   }
+
+    res.render("Landingpage", {auth : loggedin});
+});
+
+app.post('/', function (req, res) {
     res.render("Landingpage");
 });
 
 app.get('/signup', function (req, res) {
-    res.render("signup");
+    if(!req.cookies.jwt){
+        res.render("signup");
+    }else{
+        res.redirect('/')
+    }
+});
+
+app.get('/login', function (req, res) {
+    if(!req.cookies.jwt){
+        res.render("login");
+    }else{
+        res.redirect('/')
+    }    
+});
+
+app.post('/login', function (req, res) {
+
+    try {
+        const token = createToken({user: "data"});
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    } catch (err) {
+        res.status(400);
+    }
+    res.status(200).redirect('/');
+
+});
+
+app.get('/logout', (req, res) => {
+    res.cookie('jwt', '', { maxAge: 1 });
+    res.redirect('/');
 })
 
-app.post('/Landingpage', function (req, res) {
-    res.render("login");
-})
 
 app.get("/mynft", (req, res) => {
     axios.get(`https://api.opensea.io/api/v1/assets?owner=0x3c864B2c90BBEc9b0F74a190Ed3C1f1215b6d81C&order_direction=desc&offset=0&limit=20`)
